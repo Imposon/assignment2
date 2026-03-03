@@ -1,0 +1,29 @@
+const {Command} = require("commander")
+
+
+class CLI_Engine {
+    program;
+
+    constructor() {
+        this.program = new Command();
+    }
+
+
+
+
+
+
+    registerCommands(commands) {
+        commands.forEach((commandClass) => {
+            const CommandInstance = new commandClass();
+            CommandInstance.register(this.program);
+        })
+    }
+
+    run(){
+        this.program.parse();
+    }
+}
+
+
+module.exports = CLI_Engine;
