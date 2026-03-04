@@ -2,35 +2,52 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const cli_engine_1 = require("./CLI_Engine/cli_engine");
-const joke_command_1 = require("./commands/joke_command");
-const greet_command_1 = require("./commands/greet_command");
-const time_command_1 = require("./commands/time_command");
-const base64_encode_command_1 = require("./commands/base64_encode_command");
-const base64_decode_command_1 = require("./commands/base64_decode_command");
-const uuid_command_1 = require("./commands/uuid_command");
-const reverse_command_1 = require("./commands/reverse_command");
-const uppercase_command_1 = require("./commands/uppercase_command");
-const lowercase_command_1 = require("./commands/lowercase_command");
-const wordcount_command_1 = require("./commands/wordcount_command");
-const random_number_command_1 = require("./commands/random_number_command");
-const quote_command_1 = require("./commands/quote_command");
+const say_greet_1 = require("./commands/say-greet");
+const fetch_joke_1 = require("./commands/fetch-joke");
+const show_time_1 = require("./commands/show-time");
+const encode_base64_1 = require("./commands/encode-base64");
+const decode_base64_1 = require("./commands/decode-base64");
+const gen_uuid_1 = require("./commands/gen-uuid");
+const str_reverse_1 = require("./commands/str-reverse");
+const str_uppercase_1 = require("./commands/str-uppercase");
+const str_lowercase_1 = require("./commands/str-lowercase");
+const count_words_1 = require("./commands/count-words");
+const gen_random_1 = require("./commands/gen-random");
+const fetch_quote_1 = require("./commands/fetch-quote");
+const calc_sum_1 = require("./commands/calc-sum");
+const json_format_1 = require("./commands/json-format");
+const file_info_1 = require("./commands/file-info");
+const hash_gen_1 = require("./commands/hash-gen");
+const github_user_1 = require("./commands/github-user");
+const weather_1 = require("./commands/weather");
+const version_1 = require("./commands/version");
+const validate_email_1 = require("./commands/validate-email");
+const validate_url_1 = require("./commands/validate-url");
 const cli = new cli_engine_1.CLI_Engine();
 cli.registerCommand([
-    greet_command_1.Greet,
-    joke_command_1.JokeCommand,
-    time_command_1.TimeCommand,
-    base64_encode_command_1.Base64EncodeCommand,
-    base64_decode_command_1.Base64DecodeCommand,
-    uuid_command_1.UUIDCommand,
-    reverse_command_1.ReverseCommand,
-    uppercase_command_1.UppercaseCommand,
-    lowercase_command_1.LowercaseCommand,
-    wordcount_command_1.WordCountCommand,
-    random_number_command_1.RandomNumberCommand,
-    quote_command_1.QuoteCommand
+    say_greet_1.Greet,
+    fetch_joke_1.JokeCommand,
+    show_time_1.TimeCommand,
+    encode_base64_1.Base64EncodeCommand,
+    decode_base64_1.Base64DecodeCommand,
+    gen_uuid_1.UUIDCommand,
+    str_reverse_1.ReverseCommand,
+    str_uppercase_1.UppercaseCommand,
+    str_lowercase_1.LowercaseCommand,
+    count_words_1.WordCountCommand,
+    gen_random_1.RandomNumberCommand,
+    fetch_quote_1.QuoteCommand,
+    calc_sum_1.CalcSum,
+    json_format_1.JsonPretty,
+    file_info_1.FileInfo,
+    hash_gen_1.HashGenerator,
+    github_user_1.GitHubUser,
+    weather_1.WeatherCommand,
+    version_1.VersionCommand,
+    validate_email_1.EmailValidator,
+    validate_url_1.UrlValidator
 ]);
 cli.run();
-// need to build 10 commands
 // import axios = require('axios');
 // const {Command} = require('commander');
 // const program = new Command();

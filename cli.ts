@@ -1,17 +1,26 @@
 #!/usr/bin/env node
 import { CLI_Engine } from './CLI_Engine/cli_engine';
-import { JokeCommand } from './commands/joke_command';
-import { Greet } from './commands/greet_command';
-import { TimeCommand } from './commands/time_command';
-import { Base64EncodeCommand } from './commands/base64_encode_command';
-import { Base64DecodeCommand } from './commands/base64_decode_command';
-import { UUIDCommand } from './commands/uuid_command';
-import { ReverseCommand } from './commands/reverse_command';
-import { UppercaseCommand } from './commands/uppercase_command';
-import { LowercaseCommand } from './commands/lowercase_command';
-import { WordCountCommand } from './commands/wordcount_command';
-import { RandomNumberCommand } from './commands/random_number_command';
-import { QuoteCommand } from './commands/quote_command';
+import { Greet } from './commands/say-greet';
+import { JokeCommand } from './commands/fetch-joke';
+import { TimeCommand } from './commands/show-time';
+import { Base64EncodeCommand } from './commands/encode-base64';
+import { Base64DecodeCommand } from './commands/decode-base64';
+import { UUIDCommand } from './commands/gen-uuid';
+import { ReverseCommand } from './commands/str-reverse';
+import { UppercaseCommand } from './commands/str-uppercase';
+import { LowercaseCommand } from './commands/str-lowercase';
+import { WordCountCommand } from './commands/count-words';
+import { RandomNumberCommand } from './commands/gen-random';
+import { QuoteCommand } from './commands/fetch-quote';
+import { CalcSum } from './commands/calc-sum';
+import { JsonPretty } from './commands/json-format';
+import { FileInfo } from './commands/file-info';
+import { HashGenerator } from './commands/hash-gen';
+import { GitHubUser } from './commands/github-user';
+import { WeatherCommand } from './commands/weather';
+import { VersionCommand } from './commands/version';
+import { EmailValidator } from './commands/validate-email';
+import { UrlValidator } from './commands/validate-url';
 
 const cli = new CLI_Engine();
 cli.registerCommand([
@@ -26,11 +35,18 @@ cli.registerCommand([
     LowercaseCommand,
     WordCountCommand,
     RandomNumberCommand,
-    QuoteCommand
+    QuoteCommand,
+    CalcSum,
+    JsonPretty,
+    FileInfo,
+    HashGenerator,
+    GitHubUser,
+    WeatherCommand,
+    VersionCommand,
+    EmailValidator,
+    UrlValidator
 ]);
 cli.run();
-
-// need to build 10 commands
 
 
 
