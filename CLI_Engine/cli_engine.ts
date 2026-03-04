@@ -1,29 +1,40 @@
-const {Command} = require("commander")
+// const {Command} = require('commander');
 
+// class CLI_Engine {
+//     program;
+//     constructor() {
+//         this.program = new Command();
+//     }
 
-class CLI_Engine {
-    program;
+//     registerCommand(command) {
+//         command.forEach((cmdClass) => {
+//             const cmdInstance = new cmdClass(this.program);
+//             cmdInstance.register();
+//         })
+//     }
 
-    constructor() {
-        this.program = new Command();
-    }
+//     run(){
+//         this.program.parse();
+//     }
+// }
 
+import { Command } from 'commander';
 
+export class CLI_Engine {
+  private program: Command;
 
+  constructor() {
+    this.program = new Command();
+  }
 
+  registerCommand(commands: any[]) {
+    commands.forEach((cmdClass) => {
+      const cmdInstance = new cmdClass(this.program);
+      cmdInstance.register();
+    });
+  }
 
-
-    registerCommands(commands) {
-        commands.forEach((commandClass) => {
-            const CommandInstance = new commandClass();
-            CommandInstance.register(this.program);
-        })
-    }
-
-    run(){
-        this.program.parse();
-    }
+  run() {
+    this.program.parse();
+  }
 }
-
-
-module.exports = CLI_Engine;

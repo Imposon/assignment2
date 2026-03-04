@@ -1,16 +1,36 @@
 #!/usr/bin/env node
+import { CLI_Engine } from './CLI_Engine/cli_engine';
+import { JokeCommand } from './commands/joke_command';
+import { Greet } from './commands/greet_command';
+import { TimeCommand } from './commands/time_command';
+import { Base64EncodeCommand } from './commands/base64_encode_command';
+import { Base64DecodeCommand } from './commands/base64_decode_command';
+import { UUIDCommand } from './commands/uuid_command';
+import { ReverseCommand } from './commands/reverse_command';
+import { UppercaseCommand } from './commands/uppercase_command';
+import { LowercaseCommand } from './commands/lowercase_command';
+import { WordCountCommand } from './commands/wordcount_command';
+import { RandomNumberCommand } from './commands/random_number_command';
+import { QuoteCommand } from './commands/quote_command';
 
-const cli_engine = require("./CLI_Engine/cli_engine");
-const commands = require("./commands/greet_command");
+const cli = new CLI_Engine();
+cli.registerCommand([
+    Greet,
+    JokeCommand,
+    TimeCommand,
+    Base64EncodeCommand,
+    Base64DecodeCommand,
+    UUIDCommand,
+    ReverseCommand,
+    UppercaseCommand,
+    LowercaseCommand,
+    WordCountCommand,
+    RandomNumberCommand,
+    QuoteCommand
+]);
+cli.run();
 
-const engine = new cli_engine();
-engine.registerCommands([GreetCommand]);
-engine.run();
-
-
-
-
-
+// need to build 10 commands
 
 
 
